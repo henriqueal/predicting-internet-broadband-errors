@@ -11,4 +11,5 @@ Espera-se que um cliente possua suas taxas de sinal ruído, atenuação, up e do
 
 	Os dados presentes nesse relatório são sobre: umidade, temperatura, precipitação, vento, ponto de orvalho e radiação. No período de 01/10/2017 até 18/10/2017.
 
-	Os dados foram coletados como segue na Figura 1 (coleta-dados)
+	Os dados foram coletados como segue na Figura 1.
+	![coleta-dados](imagens/coleta-dados.png)
