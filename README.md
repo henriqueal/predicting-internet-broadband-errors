@@ -1,7 +1,6 @@
 # Predicting internet broadband errors
 
 
-
 Dados sobre condições metereológicas foram utilizados com o intuito de aplicar uma correlação entre estes dados com possíveis problemas na banda larga. Essa correlação parece algo natural tanto na cabeça de alguns clientes como de alguns funcionários da empresa, mas não temos nenhum estudo que esboce confirme ou que desbanque essa hipótese.
 
 Portanto, este estudo tem por objetivo traçar uma correlação entre dados metereológicos como chuva, vento, radiação, pressão, temperatura e umidade com os dados na porta do cliente como taxa de atenuação, taxa de sinal ruído e as taxas de up e downstream.

@@ -7,7 +7,6 @@ import string
 metereologic_variables = ['data','hora','temp_inst','temp_max','temp_min','umid_inst','umid_max','umid_min','pto_orvalho_inst','pto_orvalho_max','pto_orvalho_min','pressao','pressao_max','pressao_min','vento_direcao','vento_vel','vento_rajada','radiacao','precipitacao']
 metreologic_drop = ['temp_inst','temp_max','temp_min','umid_inst','umid_max','umid_min','pto_orvalho_inst','pto_orvalho_max','pto_orvalho_min','pressao','pressao_max','pressao_min','vento_direcao','vento_vel','vento_rajada','radiacao', 'hora']
 
-
 def readMetereologicData():
 	df_metereologic = pd.DataFrame.from_csv("../csv/metereologic-data.csv")
 	return df_metereologic
@@ -43,33 +42,10 @@ def rainByDay(df_rain):
 
 	key_list = range(79)
 
-
 	plt.bar(key_list, value_list, width=0.5, color='g')
 
 	plt.show()
 
-def readClientsData():
-	print ("client data")
-
-def addColunmMeditionByClient():
-	print ("medition by client")
-
-def howManyClients():
-	print ("we have K clients")
-
-def addColunmStatistics():
-	print ("statistcs")
-
-def correlationRainMedition():
-	print ("corr")
-
 df_meterelogic = readMetereologicData()
 df_rain = abstractRain(df_meterelogic)
 rainByDay(df_rain)
-
-
-readClientsData()
-addColunmStatistics()
-howManyClients()
-addColunmMeditionByClient()
-correlationRainMedition()
