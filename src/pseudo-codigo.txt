@@ -1,0 +1,16 @@
+
+entrada:
+ips_list <- lista de ips de uberlandia
+rain_list <- lista de quantidad ede chuva em uberlandia
+
+principal:
+repita 10 vezes:
+	sort_ips <- sorteie 10 elementos de ips_list
+	para cada elemento ip em sort_ips, faça:
+		json <- consome a API passando o ip
+		ports <- sorteie 10 portas do json para ip
+		para cada porta p em ports, faça:
+			att <- extrair a lista de atenuação para aquela porta
+			cor <- determine a correlação de att com rain_list
+
+
