@@ -1,6 +1,6 @@
 # Correlação entre chuva e taxa de atenuação dos equipamentos da rede banda larga em Uberlândia
 
-Neste trabalho eu dsenvolvi um sistema que analisa a correlação entre a quantidade de chuva na cidade de Uberlândia e a taxa de atenuação dos equipamentos que compõe a banda larga ADSL da cidade.
+Neste trabalho eu desenvolvi um sistema que analisa a correlação entre a quantidade de chuva na cidade de Uberlândia e a taxa de atenuação dos equipamentos que compõe a banda larga ADSL da cidade.
 
 A figura 1 ilustra a arquitetura do trabalho:
 
@@ -28,7 +28,7 @@ Para acessar a API que contém os dados, você deve pedir uma regra de firewall 
 - Tamanho da amostra: foi realizado 10 experimentos com 10 IPs e 10 portas aleatórias. Totalizando 1000 equipamentos analisados aleatoriamente.
 
 ## Solução:
-Dada a entrada contendo a lista de ips de uberlandia e a quantidade de chuva também de uberândia, então deve-se sortear uma lista de IPs com 10 elementos. Para cada IP dessa lista deve-se sortear 10 portas e extrair a taxa de atenuação através da API extratora. Para cada porta o algoritmo deve dizer qual a correlação entre a chuva e a atenuação. O pseudo código abaixo abstrai a solução para o problema:
+Dada a entrada contendo a lista de ips de Uberlândia e a quantidade de chuva também de uberândia, então deve-se sortear uma lista de IPs com 10 elementos. Para cada IP dessa lista deve-se sortear 10 portas e extrair a taxa de atenuação através da API extratora. Para cada porta o algoritmo deve dizer qual a correlação entre a chuva e a atenuação. O pseudo código abaixo abstrai a solução para o problema:
 
 ![pseudo](images/pseudo-codigo.png)
 
