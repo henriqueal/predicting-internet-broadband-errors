@@ -1,0 +1,4 @@
+quantidade de ips: 10.
+quantidade de portas testadas: 1000.
+quantidade com null: 260.
+quantidade sem null: 740.

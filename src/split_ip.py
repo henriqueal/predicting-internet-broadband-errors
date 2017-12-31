@@ -15,13 +15,13 @@ def split_ip(ip):
 	print s
 
 def read_ips():
-	with open('../csv/ips_equipamentos_uberlandia.csv') as csvfile:
+	with open('../csv/ips_udi_modified.csv') as csvfile:
 	    readCSV = csv.reader(csvfile, delimiter=',')
 	    rows = []
 	    for row in readCSV:
 	        rows.append(row[0])
 	    return rows
 
-rows = read_ips()
-for row in rows:
-	ip = split_ip(row)
+#ows = read_ips()
+#for row in rows:
+	#ip = split_ip(row)
