@@ -1,4 +1,4 @@
-# Correlação entre chuva e taxa de atenuação dos equipamentos da rede banda larga em Uberlândia
+# Correlação entre taxa de atenuação com chuva e vento dos equipamentos da rede banda larga em Uberlândia
 
 Neste trabalho foi desenvolvido um sistema que analisa a correlação entre a quantidade de chuva na cidade de Uberlândia e a taxa de atenuação dos equipamentos que compõem a banda larga ADSL da cidade.
 
