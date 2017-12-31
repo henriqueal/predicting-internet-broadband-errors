@@ -42,7 +42,7 @@ Outro ponto analisado é que há equipamentos que não sofreram alteração com 
 
 ![corr2](images/imagem4.png)
 
-No gráfico da imagem abaixo podemos observar o equipamento 172.30.15.134 com porta unit-9/port-42 que é um equipamento que apresentou forte correlação com os dados da velocidade média do vento em Uberlândia.
+Nos gráficos da imagem abaixo podemos observar o equipamento 172.30.15.134 com porta unit-9/port-42 que é um equipamento que apresentou forte correlação com os dados da velocidade média do vento em Uberlândia.
 ![corr3](images/vento.png)
 
 
