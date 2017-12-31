@@ -33,13 +33,11 @@ Dada a entrada contendo a lista de ips de uberlandia e a quantidade de chuva tam
 ![pseudo](images/pseudo-codigo.png)
 
 ## Resultado e Conclusão:
-Após analisar os dados obtidos, cheguei à conclusão que nem todos os equipamentos so sucetíveis à chuva. No entanto, alguns equipamentos parecem ter uma certa diferenciação na taxa de atenuação por meio da fator chuva. O que comprova esse argumento é a taxa média e mediana de correlação ser próxima de 0, ou seja, não apresentar correlação.
-
-Os equipamentos que apresentaram altas taxas de correlação foram criados gráficos para observar o comportamento deles e da chuva, como é possível ver na imagem 3:
+Após analisar os dados obtidos, cheguei à conclusão que nem todos os equipamentos são sucetíveis à chuva. No entanto, alguns equipamentos parecem ter uma certa diferenciação na taxa de atenuação por meio da fator chuva.
 
 ![corr](images/medicoes.png)
 
-No gráfico da imagem 3 podemos observar que o a correlação entre o equipamento cujo IP é 172.24.3.100 e a quantidade de chuva em uberlândia por dia no período de 14/12 até 29/12. Em vermelho vemos a taxa de atenuação do equipamento constante em 90, no entanto, nas últimas 4 medições (26/12 até 29/12) podemos observar que não houve chuva e a taxa de atenuação caiu para 85.
+No gráfico da imagem 3 podemos observar que a correlação entre o equipamento cujo IP é 172.24.3.100 e a quantidade de chuva em uberlândia por dia no período de 14/12 até 29/12. Em vermelho vemos a taxa de atenuação do equipamento constante em 90, no entanto, nas últimas 4 medições (26/12 até 29/12) podemos observar que não houve chuva e a taxa de atenuação caiu para 85.
 
 Analisamos também que há equipamentos que não sofreram alteração com a quantidade de chuva. Um exemplo é o equipamento cujo IP é 172.25.21.161 e cuja porta é Adsl0/13/2. Podemos observar na imagem 4 que a taxa de atenuação permaneceu constante em 90 dBs todos os dias de medições, chovendo ou não.
 
