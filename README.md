@@ -1,4 +1,4 @@
-# Predicting internet broadband errors
+# Correlação entre chuva e taxa de atenuação dos equipamentos da rede banda larga em Uberlândia
 
 Neste trabalho eu dsenvolvi um sistema que analisa a correlação entre a quantidade de chuva na cidade de Uberlândia e a taxa de atenuação dos equipamentos que compõe a banda larga ADSL da cidade.
 
@@ -39,17 +39,13 @@ Os equipamentos que apresentaram altas taxas de correlação foram criados gráf
 
 ![corr](images/medicoes.png)
 
-No gráfico da imagem 3 podemos observar que a taxa de atenuação em vermelho era constante em 90, no entanto, nas últimas 4 medições (26/12 até 29/12) podemos observar que não houve chuva e a taxa de atenuação caiu para 85.
+No gráfico da imagem 3 podemos observar que o a correlação entre o equipamento cujo IP é 172.24.3.100 e a quantidade de chuva em uberlândia por dia no período de 14/12 até 29/12. Em vermelho vemos a taxa de atenuação do equipamento constante em 90, no entanto, nas últimas 4 medições (26/12 até 29/12) podemos observar que não houve chuva e a taxa de atenuação caiu para 85.
 
-Analisamos também que há equipamentos que não houveram alteração de acordo com a quantidade de chuva
+Analisamos também que há equipamentos que não sofreram alteração com a quantidade de chuva. Um exemplo é o equipamento cujo IP é 172.25.21.161 e cuja porta é Adsl0/13/2. Podemos observar na imagem 4 que a taxa de atenuação permaneceu constante em 90 dBs todos os dias de medições, chovendo ou não.
 
+![corr](images/imagem4.png)
 
-Por fim, podemos analisar também que há equipamentos com a taxa de correlação inversamente proporcional à chuva como pode ser visto no gráfico da imagem tal.
-
-
-
-Por essas razões, não é possível afirmar que a chuva interfere diretamente na taxa de atenuação. No entanto, fica para trabalhos futuros uma análise com um período maior para analisarmos melhor se há equipamentos que realmente possuem interferência na taxa de atenuação com a chuva.
-
+A correlação média foi de -0.06897 enquanto a mediana de todas as correlações foi de -0.12280. E esses valores são baixos. Por essas razões, não é possível afirmar que a chuva interfere diretamente na taxa de atenuação. No entanto, fica para trabalhos futuros uma análise com um período maior para analisarmos melhor se há equipamentos que realmente possuem interferência na taxa de atenuação com a chuva.
 
 ## Trabalhos futuros:
 - Analisar para um período maior;
