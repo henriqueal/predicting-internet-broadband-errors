@@ -1,16 +1,49 @@
 # Predicting internet broadband errors
 
+Neste trabalho eu dsenvolvi um sistema que analisa a correlação entre a quantidade de chuva na cidade de Uberlândia e a taxa de atenuação dos equipamentos que compõe a banda larga ADSL da cidade.
 
-Dados sobre condições metereológicas foram utilizados com o intuito de aplicar uma correlação entre estes dados com possíveis problemas na banda larga. Essa correlação parece algo natural tanto na cabeça de alguns clientes como de alguns funcionários da empresa, mas não temos nenhum estudo que esboce confirme ou que desbanque essa hipótese.
+A figura 1 ilustra a arquitetura do trabalho:
 
-Portanto, este estudo tem por objetivo traçar uma correlação entre dados metereológicos como chuva, vento, radiação, pressão, temperatura e umidade com os dados na porta do cliente como taxa de atenuação, taxa de sinal ruído e as taxas de up e downstream.
+Nela, podemos observar que a solução de analytics precisa de dois inputs: uma lista com todos os IPs da cidade de Uberlândia e outra lista com a quantidade de chuva em Uberlândia por dia. A primeira lista pode ser extraída da nossa plataforma Ruby. Já o segundo parâmetro precisa ser extraído do site do inmet. O próximo passo que a solução realiza é consumir uma API passando os IPs e recebendo a lista de atenuação daqueles equipamentos. Depois disso, a solução determina qual a correlação da atenuação de cada equipamento com os dados metereológicos da chuva.
 
-Espera-se que um cliente possua suas taxas de sinal ruído, atenuação, up e downstream constantes e dentro do limite recomendado. Dessa forma, o objetivo deste trabalho é descobrir para cada variável do cliente, qual a correlação para cada uma das variáveis metereológicas. Portanto, queremos definir se a correlação é forte, fraca ou inexistente para cada par de variáveis do conjunto A com o conjunto B.
+Coletando os dados:
+- Ips do Ruby: Neste trabalho, foi solicitado para a Camila Cerqueira Lott extrair a lista de IPs da cidade de Uberlândia.
+- Dados metereológicos: 
+1) Para coletar os dados de precipitação de Uberlândia acesse o link: http://www.inmet.gov.br/sonabra/pg_dspDadosCodigo_sim.php?QTUwNw;
+2) Insira as informações de “Data início” e “Data fim” nos campos correspondentes;
+3) Digite o número apresentado ao lado para confirmação e clique em “OK”.
+- Consumindo os dados da API:
+Para acessar a API que contém os dados, você deve pedir uma regra de firewall para o servidor: 172.20.4.169. Depois que tiver acesso, basta consumir este serviço: http://172.20.4.169:8080/dslams-extractor/service/dslams/172.30.15.139?snapshotsNum=20
 
-- Coleta de dados metereológicos:
-	Os dados de informações metereológicas foram extraídos do site inmet (http://www.inmet.gov.br), com a ajuda do José Carlos Figueiredo (figueiredo@ipmet.unesp.br) que me enviou uma URL de consulta de dados específicos para a cidade de Uberlândia (http://www.inmet.gov.br/sonabra/pg_dspDadosCodigo_sim.php?QTUwNw==).
+- Quantidade de dados:
+- Ips em Uberlândia: a lista extraída do Ruby continha 540 IPs
+- Quantidade de porta: é variado de equipamento para equipamento. Mas há equipamentos com mais de 100 portas.
+- Dias coletados: houve um erro na coleta dos dados da API, com isso, todos os dados coletados antes do dia 14/12/2017 foram excluídos. Dessa forma, foram coletados os dados da atenuação e da chuva do dia 14/12 ao dia 29/12/2017, totalizando 16 dias.
+- Tamanho da amostra: foi realizado 10 experimentos com 10 IPs e 10 portas aleatórias. Totalizando 1000 equipamentos analisados aleatoriamente.
 
-	Os dados presentes nesse relatório são sobre: umidade, temperatura, precipitação, vento, ponto de orvalho e radiação. No período de 01/10/2017 até 18/10/2017.
+- Solução:
+Dada a entrada contendo a lista de ips de uberlandia e a quantidade de chuva também de uberândia, então deve-se sortear uma lista de IPs com 10 elementos. Para cada IP dessa lista deve-se sortear 10 portas e extrair a taxa de atenuação através da API extratora. Para cada porta o algoritmo deve dizer qual a correlação entre a chuva e a atenuação. O pseudo código abaixo abstrai a solução para o problema.
 
-	Os dados foram coletados como segue na Figura 1.
-	![coleta-dados](images/coleta-dados.png)
+
+-Resultado e Conclusão:
+Após analisar os dados obtidos, cheguei à conclusão que nem todos os equipamentos so sucetíveis à chuva. No entanto, alguns equipamentos parecem ter uma certa diferenciação na taxa de atenuação por meio da fator chuva. O que comprova esse argumento é a taxa média e mediana de correlação ser próxima de 0, ou seja, não apresentar correlação. 
+
+Os equipamentos que apresentaram altas taxas de correlação foram criados gráficos para observar o comportamento deles e da chuva, como é possível ver na imagem N:
+
+No gráfico é possível ver que nos dias que não houve chuva a taxa de atenuação caiu, mostrando que esses equipamentos aparentam ser sucetíveis a este fator metereológico. Por outro lado, há equipamentos que não possuíram correlação nenhuma com o fator chuva, como pode ser visto no gráfico da imagem tal.
+
+
+Por fim, podemos analisar também que há equipamentos com a taxa de correlação inversamente proporcional à chuva como pode ser visto no gráfico da imagem tal.
+
+
+
+Por essas razões, não é possível afirmar que a chuva interfere diretamente na taxa de atenuação. No entanto, fica para trabalhos futuros uma análise com um período maior para analisarmos melhor se há equipamentos que realmente possuem interferência na taxa de atenuação com a chuva.
+
+
+- Trabalhos futuros:
+- Analisar para um período maior;
+- Fazer a correlação com outras variáveis metereológicas (chuva, vento, umidade, temperatura, etc)
+- Fazer a correlação com outras variáveis do equipamento (taxa de upload, downoload, sinal rudo, etc).
+- Analisar para outras cidade.
+- Armazenar os dados metereolóficos em um BD
+
