@@ -4,6 +4,9 @@ Neste trabalho eu dsenvolvi um sistema que analisa a correlação entre a quanti
 
 A figura 1 ilustra a arquitetura do trabalho:
 
+![Arquitetura](../images/arquitetura_solucao.png)
+
+
 Nela, podemos observar que a solução de analytics precisa de dois inputs: uma lista com todos os IPs da cidade de Uberlândia e outra lista com a quantidade de chuva em Uberlândia por dia. A primeira lista pode ser extraída da nossa plataforma Ruby. Já o segundo parâmetro precisa ser extraído do site do inmet. O próximo passo que a solução realiza é consumir uma API passando os IPs e recebendo a lista de atenuação daqueles equipamentos. Depois disso, a solução determina qual a correlação da atenuação de cada equipamento com os dados metereológicos da chuva.
 
 Coletando os dados:
